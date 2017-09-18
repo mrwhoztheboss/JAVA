@@ -1,0 +1,83 @@
+import java.io.*;
+import java.util.*;
+class Student
+{
+	String name;
+	int roll_no;
+	void get_data(String s,int n)
+	{
+		name =s;
+		roll_no=n;
+	}
+	void display_data()
+	{
+		System.out.println("Name:"+name+"\nRoll no:"+roll_no);	
+	}
+}
+class Test extends Student
+{
+	int dsa,java,pcom,maths,dbms;
+	void gets_data(int d, int j, int p, int m, int db)
+	{
+		dsa=d;
+		java=j;
+		pcom=p;
+		maths=m;
+		dbms=db;	
+	}
+	void displays_data()
+	{
+		System.out.println("DSA Marks:"+dsa+"\tJava Marks:"+java+"\tP-Com Marks:"+pcom+"\nMaths marks:"+maths+"\tDBMS Marks:"+dbms);			
+	}
+}
+class Result extends Test
+{
+	int total;
+	float average,percentage;
+	void final_result()
+	{	
+	total=(dsa+java+pcom+dbms+maths);
+	average=(dsa+java+pcom+dbms+maths)/5;
+	percentage=(total*100)/400;
+	System.out.println("The average marks of your exam is:"+average+"\nThe Total marks of exam is:"+total+"\n The percentage in exam is:"+percentage);
+	}
+}
+class Multilevel
+{
+	public static void main(String args[])
+	{	int roll_no,dsa,java,pcom,maths,dbms;
+		String str1;
+		Result r=new Result();		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the name and Roll no \n ");
+		str1=sc.nextLine();
+		roll_no=sc.nextInt();
+		r.get_data(str1,roll_no);
+		r.display_data();
+		System.out.println("Enter the marks of Dsa,Java,P-Com,Maths,Dbms \n");
+		dsa=sc.nextInt();
+		java=sc.nextInt();
+		pcom=sc.nextInt();
+		maths=sc.nextInt();
+		dbms=sc.nextInt();
+		r.gets_data(dsa,java,pcom,maths,dbms);
+		r.displays_data();
+		r.final_result();
+	}
+}
+*************************  Output *************************
+Enter the name and Roll no
+MrWhoztheBoss
+420
+Name: MrWhoztheBoss
+Roll no: 420
+Enter the marks of Dsa,Java,P-Com,Maths,Dbms
+
+78   80   78   80   79
+DSA Marks:78    Java Marks:80   P-Com Marks:78
+Maths marks:80   DBMS Marks:79
+
+The average marks of your exam is:79.0
+The Total marks of exam is:395
+The percentage in exam is:98.0
+*************************  Output *************************
