@@ -1,0 +1,41 @@
+package package1;
+public class A
+{
+public void displayA()
+{
+System.out.println("This is Class A");
+}
+}
+*****************************************************************************
+package package2;
+public class B
+{
+protected int m=10;
+public void displayB()
+{
+System.out.println("This is Class B");
+System.out.println("m="+m);
+}
+}
+****************************************************************************
+import package1.A;
+import package2.*;
+class Test
+{
+public static void main(String args[])
+{
+A objA=new A();
+B objB=new B();
+objA.displayA();
+objB.displayB();
+}
+}
+********************************************************************************
+
+Output:--->
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop/Program$ javac Test.java
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop/Program$ java Test
+This is Class A
+This is Class B
+m=10
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop/Program$
