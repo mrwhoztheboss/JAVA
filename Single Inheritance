@@ -1,0 +1,49 @@
+class Room
+{
+int l,b;
+Room(int x,int y)              
+{
+l=x;
+b=y;
+}
+int area()
+{
+return(l*b);
+}
+}
+class Bedroom extends Room
+{
+int h;
+Bedroom(int x,int y,int z)    
+{
+super(x,y);
+h=z;
+}
+int volume()
+{
+return(l*b*h);
+}
+}
+class House
+{
+public static void main(String args[])
+{
+Bedroom B = new Bedroom(14,12,10);
+int a=B.area();
+System.out.println("Area ="+a);
+int v=B.volume();
+System.out.println("Volume ="+v);
+}
+}
+
+ 
+
+
+******************* OUTPUT ********************
+
+lenovo@lenovo-ThinkCentre-M71e:~$ cd Desktop
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop$ javac House.java
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop$ java House
+Area =168
+Volume =1680
+lenovo@lenovo-ThinkCentre-M71e:~/Desktop$ 
