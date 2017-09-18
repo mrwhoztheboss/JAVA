@@ -1,0 +1,41 @@
+import java.io.*;
+import java.lang.*;
+import java.util.Scanner;
+
+class quad 
+{
+	public static void main(String args[])
+	{
+		double x1,x2,a,b,c,d;
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter Values for (a):(b):(c) :");
+		a=in.nextInt();
+		b=in.nextInt();
+		c=in.nextInt();
+		d=((b*b)-(4*a*c));
+		if(d==0)
+		{ 
+			System.out.println("Roots are real and equal");
+			x1=x2=-b/(2*a);
+			System.out.println("root 1 : "+x1+" root 2 : "+x2); 
+		}
+		else if(d>0)
+		{
+			System.out.println("Roots are real & unique");
+			x1=(-b + Math.sqrt(d)/(2*a));
+			x2=(-b - Math.sqrt(d)/(2*a));
+			System.out.println("root 1 : "+x1+" root 2 : "+x2);
+		}
+		else
+			System.out.println("Roots are not real");
+	}
+}
+
+*********************************OUTPUT********************************
+
+Enter Values for (a):(b):(c) :
+2 8 4
+Roots are real & unique
+root 1 : -6.585786437626905  root 2 : -9.414213562373096
+
+*********************************OUTPUT********************************
