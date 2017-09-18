@@ -1,0 +1,42 @@
+import java.io.*;
+class Data
+{
+public static void main(String args[])throws IOException
+{
+int l;
+char p;
+InputStreamReader r=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(r);
+String s,z,q,t,e=new String();
+System.out.println("Enter a string");
+s=input.readLine();
+System.out.println("Entered string is\n"+s);
+l=s.length();
+System.out.println("The length of entered string ="+l);
+p=s.charAt(4);
+System.out.println("The character at index 4 is "+p);
+z=s.toLowerCase();
+System.out.println("The string in lower case is "+z);
+q=s.toUpperCase();
+System.out.println("The string in upper case is "+q);
+t=s.substring(8,15);
+System.out.println("The substring is "+t);
+e=s.concat(" of TECHnicalities ");
+System.out.println("The concated string is "+e);
+}
+}
+
+
+########## OUTPUT ##########
+Enter a string
+AbcDefG College
+Entered string is Abcdefg College
+The length of entered string =15
+The character at index 4 is D
+The string in lower case is abcdefg college
+The string in upper case is ABCDEFG COLLEGE
+The substring is College
+The concated string is AbcDefG College of TECHnicalities 
+########## OUTPUT ##########
+
+
