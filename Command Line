@@ -1,0 +1,31 @@
+import java.io.*;
+class Comline
+{
+  public static void main(String args[])
+  {
+   int count,i=0;
+   String str;
+   count = args.length;
+   System.out.println("number of arguments "+count);
+  while(i<count)
+   {
+     str=args[i];
+      i=i+1;
+      System.out.println("java is "+str);
+   }
+  }
+}
+
+
+OUTPUT:
+
+lenovo713@lenovo713-ThinkCentre-M71e:~$ cd Desktop
+lenovo713@lenovo713-ThinkCentre-M71e:~/Desktop$ cd program
+lenovo713@lenovo713-ThinkCentre-M71e:~/Desktop/program$ javac Comline.java
+lenovo713@lenovo713-ThinkCentre-M71e:~/Desktop/program$ java Comline
+number of arguments 0
+lenovo713@lenovo713-ThinkCentre-M71e:~/Desktop/program$ java Comline robust objoriented
+number of arguments 2
+java is robust
+java is objoriented
+lenovo713@lenovo713-ThinkCentre-M71e:~/Desktop/program$ 
