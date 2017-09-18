@@ -1,0 +1,202 @@
+import java.io.*;
+class All
+{
+inti,j,k,s,temp;
+int a[][]=new int[3][3];
+int b[][]=new int[3][3];
+int c[][]=new int[3][3];
+DataInputStream in=new DataInputStream(System.in);
+	voidgetdata()throws Exception
+	{
+	System.out.println("Enter the elements of matrix A\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		a[i][j]=Integer.parseInt(in.readLine());		
+		}		
+		}
+	System.out.println("Enter the elements of matrix B\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		b[i][j]=Integer.parseInt(in.readLine());		
+		}		
+		}	
+	}
+	void addition()
+	{
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		c[i][j]=a[i][j]+b[i][j];		
+		}		
+		}
+	System.out.println("Addition of two matrix A and matrix B is:\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		System.out.print(c[i][j]+"\t");		
+		}
+		System.out.println();		
+		}		
+	}	
+	void multiplication()
+	{
+	for(i=0;i<3;i++)
+	{
+	for(j=0;j<3;j++)
+	{
+	for(k=0;k<3;k++)
+	{
+	s=s+a[i][k]*b[k][j];	
+	}
+	c[i][j]=s;	
+	}
+	}
+	System.out.println("Multiplication of two matrix A and matrix B is:\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		System.out.print(c[i][j]+"\t");		
+		}
+		System.out.println();		
+		}	
+	}
+	void transpose()
+	{
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		if(i<j)
+		{
+		temp=a[i][j];
+		a[i][j]=a[j][i];
+		a[j][i]=temp;
+		}		
+		}		
+		}
+	System.out.println("Transpose of Matrix A is:\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		System.out.print(a[i][j]+"\t");		
+		}
+		System.out.println();		
+		}
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		if(i<j)
+		{
+		temp=b[i][j];
+		b[i][j]=b[j][i];
+		b[j][i]=temp;
+		}		
+		}		
+		}
+	System.out.println("Transpose of Matrix B is:\n");
+		for(i=0;i<3;i++)
+		{
+		for(j=0;j<3;j++)
+		{
+		System.out.print(b[i][j]+"\t");		
+		}
+		System.out.println();		
+		}				
+	}
+}
+class Main
+{
+public static void main(String args[])throws Exception
+    {
+	int o;
+	All a=new All();
+	DataInputStream in=new DataInputStream(System.in);
+a.getdata();
+do
+        {
+System.out.println("Enter your choice\n1: ADD\n2: MULTIPLY\n3: TRANSPOSE\n4: EXIT");
+        o=Integer.parseInt(in.readLine());
+switch(o)
+        {
+case 1:a.addition();
+break;
+case 2:a.multiplication();
+break;
+case 3:a.transpose();
+break;
+case 4:break;
+default:System.out.println("Invalid input");
+break;
+        }
+}while(o!=4);
+    }
+}
+
+
+***************OUTPUT*****************
+inft@inft-ThinkCentre-E73:~$ cd Desktop
+inft@inft-ThinkCentre-E73:~/Desktop$ javac Main.java
+Note: Main.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+inft@inft-ThinkCentre-E73:~/Desktop$ java Main
+Enter the elements of matrix A
+
+3  4  6  2  5  7  3  4  5
+Enter the elements of matrix B
+
+4  7  5  7  5  7  4  8  6
+Enter your choice
+1: ADD
+2: MULTIPLY
+3: TRANSPOSE
+4: EXIT
+1
+Addition of two matrix A and matrix B is:
+
+7	11	11	
+9	10	14	
+7	12	11	
+Enter your choice
+1: ADD
+2: MULTIPLY
+3: TRANSPOSE
+4: EXIT
+2
+Multiplication of two matrix A and matrix B is:
+
+64	153	232	
+303	398	485	
+545	626	699	
+Enter your choice
+1: ADD
+2: MULTIPLY
+3: TRANSPOSE
+4: EXIT
+3
+Transpose of Matrix A is:
+
+3	2	3	
+4	5	4	
+6	7	5	
+Transpose of Matrix B is:
+
+4	7	4	
+7	5	8	
+5	7	6	
+Enter your choice
+1: ADD
+2: MULTIPLY
+3: TRANSPOSE
+4: EXIT
+4
+
+
