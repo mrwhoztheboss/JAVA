@@ -1,0 +1,226 @@
+import java.io.*;
+class Student
+{
+int n;
+InputStreamReader r=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(r);
+String s=new String();
+void accept() throws IOException
+{
+System.out.println("Enter the no. of courses");
+s=input.readLine();
+n=Integer.parseInt(s);
+}
+void display()
+{
+System.out.println("Total courses ="+n);
+}
+}
+class Arts extends Student
+{
+int b,r,y;
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s=new String();
+void accept() throws IOException
+{
+super.accept();
+System.out.println("Enter number of years");
+s=input.readLine();
+y=Integer.parseInt(s);
+System.out.println("Enter no of branches");
+s=input.readLine();
+b=Integer.parseInt(s);
+System.out.println("Enter the roll no");
+s=input.readLine();
+r=Integer.parseInt(s);
+}
+void display()
+{
+super.display();
+System.out.println("No of years ="+y);
+System.out.println("No of branches ="+b);
+System.out.println("Roll Number ="+r);
+}
+}
+class Engineering extends Student
+{
+int b,r,y;
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s,s1=new String();
+void accept() throws IOException
+{
+super.accept();
+System.out.println("Enter number of years");
+s=input.readLine();
+y=Integer.parseInt(s);
+System.out.println("Enter the name of student");
+s1=input.readLine();
+System.out.println("Enter the roll no");
+s=input.readLine();
+r=Integer.parseInt(s);
+}
+void display()
+{
+super.display();
+System.out.println("No of years ="+y);
+System.out.println("Name of student ="+s1);
+System.out.println("Roll Number ="+r);
+}
+}
+class Medical extends Student
+{
+int b,r,y;
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s=new String();
+void accept() throws IOException
+{
+super.accept();
+System.out.println("Enter number of years");
+s=input.readLine();
+y=Integer.parseInt(s);
+System.out.println("Enter no of branches");
+s=input.readLine();
+b=Integer.parseInt(s);
+System.out.println("Enter the roll no");
+s=input.readLine();
+r=Integer.parseInt(s);
+}
+void display()
+{
+super.display();
+System.out.println("No of years ="+y);
+System.out.println("No of branches ="+b);
+System.out.println("Roll Number ="+r);
+}
+}
+class Computer extends Engineering
+{
+int n,sub;
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s=new String();
+void accept() throws IOException
+{
+super.accept();
+System.out.println("Enter no of students");
+s=input.readLine();
+n=Integer.parseInt(s);
+System.out.println("Enter no of subjects ");
+s=input.readLine();
+sub=Integer.parseInt(s);
+}
+void display()
+{
+super.display();
+System.out.println("Number of students ="+n);
+System.out.println("Number of subjects ="+sub);
+}
+}
+class IT extends Engineering
+{
+int n,sub;
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s=new String();
+void accept() throws IOException
+{
+super.accept();
+System.out.println("Enter no of students");
+s=input.readLine();
+n=Integer.parseInt(s);
+System.out.println("Enter no of subjects ");
+s=input.readLine();
+sub=Integer.parseInt(s);
+}
+void display()
+{
+super.display();
+System.out.println("Number of students ="+n);
+System.out.println("Number of subjects ="+sub);
+}
+}
+class Run
+{
+public static void main(String args[])throws IOException
+{
+InputStreamReader p=new InputStreamReader(System.in);
+BufferedReader input=new BufferedReader(p);
+String s=new String();
+int option;
+System.out.println("MENU");
+System.out.println("1.ARTS");
+System.out.println("2.COMPUTER ENGINEERING");
+System.out.println("3.IT ENGINEERING");
+System.out.println("4.MEDICAL");
+System.out.println("Enter option");
+s=input.readLine();
+option=Integer.parseInt(s);
+switch (option)
+{
+case 1: 
+System.out.println("Course selected is Arts");
+Arts a=new Arts();
+a.accept();
+a.display();
+break;
+case 2:
+System.out.println("Course selected is Computer Engineering");
+Computer c=new Computer();
+c.accept();
+c.display();
+break;
+case 3:
+System.out.println("Course selected is IT Engineering");
+IT i=new IT();
+i.accept();;
+i.display();
+break;
+case 4:
+System.out.println("Course selected is Medical");
+Medical m=new Medical();
+m.accept();
+m.display();
+break;
+}
+}
+}
+
+
+
+********OUTPUT********
+ 
+guest-SgvMuW@lenovo718-ThinkCentre-M71e:~$ cd Desktop
+guest-SgvMuW@lenovo718-ThinkCentre-M71e:~/Desktop$ cd Abc
+guest-SgvMuW@lenovo718-ThinkCentre-M71e:~/Desktop/Abc$ javac Run.java
+guest-SgvMuW@lenovo718-ThinkCentre-M71e:~/Desktop/Abc$  java Run
+MENU
+1.ARTS
+2.COMPUTER ENGINEERING
+3.IT ENGINEERING
+4.MEDICAL
+Enter option
+3
+Enter the no. of courses
+1
+Enter number of years
+4
+Enter the name of student
+60
+Enter the roll no
+32
+Enter no of students
+20
+Enter no of subjects 
+6
+
+Course selected is IT Engineering 
+Total courses =1
+No of years =4
+Name of student =60
+Roll Number =32
+Number of students =120
+Number of subjects =6
+
