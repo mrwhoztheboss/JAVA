@@ -1,4 +1,5 @@
-student.java
+student.java => File Name
+
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
@@ -99,4 +100,4 @@ System.exit(0);
 }
 }
 
-To View OutPut Visit : https://zefiro.me/share/f752fdf1d8750820d11eb4e14f5068a09c39d21e4c91afb189a13f5789a717b9d23aba42f677a7fafa5caf1386ebe773
+To View OutPut Visit : http://0bc.xyz/6jE
